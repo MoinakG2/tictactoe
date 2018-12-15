@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html>
+<body>
+<p align ="center"><font face ="arial" size="30">Let`s play tic tac toe</font></p>
+<p>In the respective textboxes which also indicate the position of the placement of circle or cross
+<br>place 1 for cross and 0 for circle</p>
+<form>
+<input id="0" type="text" onchange="check()">
+<input id="1" type="text" onchange="check()">
+<input id="2" type="text" onchange="check()"><br>
+<input id="3" type="text" onchange="check()">
+<input id="4" type="text" onchange="check()">
+<input id="5" type="text" onchange="check()"><br>
+<input id="6" type="text" onchange="check()">
+<input id="7" type="text" onchange="check()">
+<input id="8" type="text" onchange="check()">
+</form>
+<script type="text/javascript">
+count=0;
+function check()
+{
+count++;
+alert("hi");
+int i1,i2,i3,i4=0;
+for(i1=0;i1<2;i1++)
+{
+int rsum,csum,dsum1,dsum2;
+for(i2=0;i2<3;i2++)
+{
+rsum=0;
+for(i3=(i2*3);i3<(3+(i2*3));i3++)
+{
+if (document.forms[0].elements[i3]==i1)
+  rsum+=document.forms[0].elements[i3];
+  document.write(rsum);
+}
+if (rsum==3){alert("Player"+(i1+1)+"wins");break;}
+}
+for(i2=0;i2<3;i2++)
+{
+csum=0;
+for(i3=i2;i3<(3+i2);i3=i3+3)
+{
+if (document.forms[0].elements[i3]==i1)
+  csum+=document.forms[0].elements[i3];
+}
+if (csum==3){alert("Player"+(i1+1)+"wins");break;}
+}
+dsum1=document.forms[0].elements[0]+document.forms[0].elements[4]+document.forms[0].elements[8];
+dsum2=document.forms[0].elements[2]+document.forms[0].elements[4]+document.forms[0].elements[6];
+if ((dsum==3)||(dsum2==3)){alert("Player"+(i1+1)+"wins");break;}
+if(count==9)alert("no one wins");
+}
+</script>
+</body>
+</html>
